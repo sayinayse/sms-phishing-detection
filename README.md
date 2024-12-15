@@ -27,9 +27,9 @@ imsi "international mobil subscriber identity"nin her bir kelimenin ilk harfini 
 imsi yakalayıcısı meşru bir baz istasyonu gibi davranabilen bir cihaz. bu cihaz çok pahalı olmamakla birlikte, farklı boyut ve kapasitelerde seçeneklere sahip. hangisinin ne gibi durumlar için kullanım uygunluğu sizin belirleyeceğiniz bir konu: 
 
 kahve sohbetleri için?
-![[notes/kv-konsey.jpeg]]
+![](notes/kv-konsey.jpeg)
 ya da protesto edenler için?
-![[notes/protesto.jpeg]]
+![](notes/protesto.jpeg)
 
 tabiî bu cihazı kullanarak kendi baz istasyonunuzu hedeflediğiniz bir yere dikmenizin önünde de bir engel yok.
 
@@ -66,7 +66,7 @@ mesela sayfalama/paging işlemi sırasında 4g'de bile tmsi ile ilişkisini yiti
 *sayfalama* işleminden de bahsedecek isek: ağ tarafından başlatılan bir prosestir. gelen bir çağrı için olabilir, ağdaki cihazlara sunulacak yeni bir servisin haberdâr edilmesi için ya da acil durum uyarıları için.
 
 #### ericsson'un 5g için çözüm önerisi
-![[notes/5g-imsi.jpeg]]
+![](notes/5g-imsi.jpeg)
 
 [ericsson böyle bir çözüm önerisinde bulunmuş](https://www.ericsson.com/en/blog/2017/6/protecting-5g-against-imsi-catchers)
 lakin bu imsi'nin başka bir kullanım senaryosunda açık edilmemesi gerekir.
