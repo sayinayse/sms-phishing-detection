@@ -13,6 +13,11 @@ Tahmin ederim ki buradaki kurallar illegal bahis sitelerinden gelecek iletileri 
 3. Aciliyet ya da bir çeşit tehdit içeren iletileri de elemeli, bunun için doğal dil işleme yöntemlerinden yararlanmak daha verimli olacak. O sebepten bir üstteki kurala eklemiyorum örneklerini. 
 4. Dilbilgisi yanlışlarını ekleyecek olursak ortalık karışabilir, eli yüzü düzgün ileti yazan kişi sayısı çok çok azınlıkta zira.
 5. Gönderici numarasına bakabiliriz. Türkçe SMS oltalama tespit etmeye çalıştığımızdan mütevellit, +90 ile başlayan bir numaradan ileti gelince bunu doğrudan spam olarak algılamakta bir mahzur görmüyorum 28 yıllık yaşam tecrübemden ve bunun bir dönem ödevi olmasından kaynaklanan cüretkârlık ile.
+6. Ardışıl ünlemler!!!
+7. Ardışıl BÜYÜK HARFLER
+8. Sahte linkler 
+9. Typosquatting bkz. [yazım tuzağı](https://www.kaspersky.com/resource-center/definitions/what-is-typosquatting) 
+
 
 **NOT** Buradaki kuralları vakitle genişletmeye çalışacağım. Niyetim makine öğrenmesi bloğundan evvel kural tabanlı bir filtreleme yapmak. _Her şeyin ilacı olarak YZ ve MÖ_ reçetesine güvenmiyorum.
 
