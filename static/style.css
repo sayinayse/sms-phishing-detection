@@ -1,0 +1,84 @@
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f9f9f9;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.container {
+  background: #ffffff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  width: 300px;
+}
+
+h1 {
+  font-size: 1.5em;
+  margin-bottom: 20px;
+  color: #333333;
+}
+
+textarea {
+  width: calc(100% - 20px);
+  height: 100px;
+  margin: 0 auto 15px auto;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 1em;
+  resize: none;
+  display: block;
+}
+
+textarea:focus {
+  border-color: #007BFF;
+  outline: none;
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+button {
+  background-color: #007BFF;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  padding: 10px 20px;
+  font-size: 1em;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+button:active {
+  background-color: #004085;
+}
+
+#loadingMessage {
+  margin-top: 15px;
+  color: #555555;
+  font-size: 0.9em;
+}
+
+#result {
+  margin-top: 20px;
+  padding: 10px;
+  border-radius: 4px;
+  font-size: 1em;
+}
+
+#result.spam {
+  background-color: #ffcccc;
+  color: #a80000;
+}
+
+#result.not-spam {
+  background-color: #ccffcc;
+  color: #006600;
+}

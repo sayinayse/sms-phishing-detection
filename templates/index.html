@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SMS Spam Detector</title>
+  <link rel="stylesheet" href="../static/style.css">
+</head>
+<body>
+  <div class="container">
+    <h1>SMS Spam Detector</h1>
+    <form action="/" method="POST">
+       <textarea id="smsInput" name="sms" placeholder="Type your SMS here..."></textarea>
+       <button id="submitButton">Submit</button>
+    </form>
+    <p id="loadingMessage" style="display: none;">Processing...</p>
+    <!-- Display the result -->
+    {% if result is defined %}
+      <div id="result" class="{{ 'spam' if result.is_spam else 'not-spam' }}">
+        {{ 'This SMS is classified as SPAM.' if result.is_spam else 'This SMS is NOT SPAM.' }}
+      </div>
+    {% endif %}
+  </div>
+
+<!-- <script src="../static/script.js"></script> -->
+</body>
+</html>
