@@ -31,7 +31,6 @@ def read_data():
 
         return df
 
-
 def about_data():
     df = read_data()
 
@@ -132,20 +131,26 @@ def create_model():
     model = LogisticRegression()
     model.fit(X_train_tfidf, y_train)
 
-    # lets write the model evaluation into a file. and get rid of the model evaluation function afterwaards
+    # let's write the model evaluation into a file
+    save_dir = "notes"
+    os.makedirs(save_dir, exist_ok=True)
+    file_path = os.path.join(save_dir, "model_evaluation.txt")
 
-def model_evaluation(X_test_tfidf, y_test):
     y_pred = model.predict(X_test_tfidf)
     acc = accuracy_score(y_test, y_pred)
-    print(f"Accuracy: {acc}")
 
     conf_matrix = confusion_matrix(y_test, y_pred)
-    print("Confusion Matrix:")
-    print(conf_matrix)
 
     class_report = classification_report(y_test, y_pred)
-    print("Classification Report:")
-    print(class_report)
+
+    # Write the results to the file
+    with open(file_path, "w", encoding="utf-8") as file:
+        file.write(f"Accuracy:\n{acc}\n\n")
+        file.write(f"Confusion Matrix:\n{conf_matrix}\n\n")
+        file.write(f"Classification Report:\n{class_report}\n")
+
+    print(f"Model evaluation results saved to: {file_path}")
+
 
 def is_phishing_sms(sms_text):
     create_model()
@@ -164,26 +169,13 @@ def is_phishing_sms(sms_text):
             result = False
     return result
 
-    # Step1: analyze the dataset
-
-    # Step2: clean text
-
-
-    # Step3: draw word cloud
-
-
-    # Step4: split data
-
-    # Step5: feature extraction, tf-idf
-
-
-    # Step6: model training and evaluation
-
-    # model evaluation
-
-
-    # take sms input and classify it as spam or not using the model
-    # MODEL2:
+# Step1: analyze the dataset
+# Step2: clean text
+# Step3: draw word cloud
+# Step4: split data
+# Step5: feature extraction, tf-idf
+# Step6: model training and evaluation
+# Step7: model evaluation
 
 
 
