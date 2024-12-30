@@ -1,4 +1,6 @@
 # Let's define rule-based filters, this can be extended with time.
+import re
+
 def is_phishing_sms(sms_text):
     """
     Checks if an SMS matches phishing criteria based on defined rules.

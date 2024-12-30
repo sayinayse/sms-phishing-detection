@@ -1,6 +1,6 @@
 from flask import Flask, request, jsonify, render_template
-import re
 import rule_based
+import ml_based
 
 app = Flask(__name__)
 
@@ -21,7 +21,7 @@ def classify_sms():
         # Example logic for spam detection
     is_spam_rule_based = rule_based.is_phishing_sms(sms_text)
     if not is_spam_rule_based:
-        is_spam_ML = is_phishing_sms(sms_text)
+        is_spam_ML = ml_based.is_phishing_sms(sms_text)
 
     is_spam = (is_spam_rule_based or is_spam_ML)
     result = {'is_spam' : is_spam}
