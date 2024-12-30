@@ -18,14 +18,20 @@ def classify_sms():
     if not sms_text:
         return jsonify({'error': 'SMS text is required'}), 400
 
-        # Example logic for spam detection
-    is_spam_rule_based = rule_based.is_phishing_sms(sms_text)
-    if not is_spam_rule_based:
-        is_spam_ML = ml_based.is_phishing_sms(sms_text)
+    print(sms_text)
+    # rule based detection
+    is_spam = rule_based.is_phishing_sms(sms_text)
+    print("rule: ", is_spam)
+    if is_spam == False:
+        is_spam = ml_based.is_phishing_sms(sms_text)
+        print("ml: ", is_spam)
 
-    is_spam = (is_spam_rule_based or is_spam_ML)
+    print("is_spam", is_spam)
     result = {'is_spam' : is_spam}
 
+    # TO DO: Show an informative result evaluation.
+    # Why is it evaluated as spam, because of the rule_based? Which rule?
+    # Because of ML classification? Which model, present the related model evaluation results.
     # Send back a JSON response
     return render_template("index.html", result=result)
 

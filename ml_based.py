@@ -11,8 +11,13 @@ from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.linear_model import LogisticRegression
 from sklearn.metrics import accuracy_score, classification_report , confusion_matrix
 
+clean_text = None
+df = None
+# to get rid of the stopwords
+nltk.download('stopwords')
+stopwords = set(stopwords.words('turkish'))
 
-def about_data():
+def read_data():
     # Load the dataset
     try:
         df = pd.read_csv("TurkishSMSCollection.csv", sep=';')
@@ -23,6 +28,12 @@ def about_data():
     # Drop unnecessary columns if they exist
     if "GroupText" in df.columns:
         df = df.drop(columns="GroupText", axis=1)
+
+        return df
+
+
+def about_data():
+    df = read_data()
 
     # Check for missing values
     missing_values = df.isnull().sum()
@@ -66,12 +77,13 @@ def about_data():
 
     return df
 
-def clean_data(df, stopwords):
+def clean_data():
+    df = read_data()
+    # Step2: clean text
+
     df["Message"] = df["Message"].str.lower()
     df["Message"] = df["Message"].str.translate(str.maketrans('', '', string.punctuation))
     df["Message"] = df["Message"].str.replace('\s+', ' ', regex=True)
-
-
 
     df["Message"] = df["Message"].apply(lambda x: ' '.join([
         word for word in x.split()
@@ -79,8 +91,9 @@ def clean_data(df, stopwords):
     ]))
     return df
 
-def draw_wordcloud(df):
+def draw_wordcloud():
     # we can draw the word cloud, need to join messages to give as an input to wordcloud
+    df = clean_data()
     cleaned_text = ' '.join(df["Message"])
     wordcloud = WordCloud(width=800, height=400, background_color='white').generate(cleaned_text)
 
@@ -99,6 +112,28 @@ def draw_wordcloud(df):
 
     print(f"Wordcloud plot saved to: {plot_path}")
 
+def create_model():
+    # need to clean data first
+    df = clean_data()
+    global model, tfidf  # Declare global variables
+
+    # split data
+    X = df["Message"]
+    y = df["Group"]
+
+    X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
+
+    # feature extraction
+    tfidf = TfidfVectorizer(max_features=5000)
+    X_train_tfidf = tfidf.fit_transform(X_train)
+    X_test_tfidf = tfidf.transform(X_test)
+
+    # MODEL1: logistic regression training
+    model = LogisticRegression()
+    model.fit(X_train_tfidf, y_train)
+
+    # lets write the model evaluation into a file. and get rid of the model evaluation function afterwaards
+
 def model_evaluation(X_test_tfidf, y_test):
     y_pred = model.predict(X_test_tfidf)
     acc = accuracy_score(y_test, y_pred)
@@ -113,51 +148,39 @@ def model_evaluation(X_test_tfidf, y_test):
     print(class_report)
 
 def is_phishing_sms(sms_text):
+    create_model()
     # Ensure sms_text is a list, even if a single string is provided
     if isinstance(sms_text, str):
         sms_text = [sms_text]  # Convert single string to a list
 
-    texts_tfidf = tfidf.transform(sms_text)
-    predictions = model.predict(texts_tfidf)
+    texts_tfidf = tfidf.transform(sms_text)  # Using the global tfidf
+    predictions = model.predict(texts_tfidf)  # Using the global model
 
+    results = []
     for message, prediction in zip(sms_text, predictions):
         if prediction == 1:
-            result = print(f"'{message}' : Spam")
+            result = True
         else:
-            result= print(f"'{message}' : Normal")
+            result = False
     return result
 
-if __name__ == '__main__':
     # Step1: analyze the dataset
-    df = about_data()
 
     # Step2: clean text
-    # to get rid of the stopwords
-    nltk.download('stopwords')
-    stopwords = set(stopwords.words('turkish'))
 
-    df = clean_data(df, stopwords)
 
     # Step3: draw word cloud
-    draw_wordcloud(df)
+
 
     # Step4: split data
-    X = df["Message"]
-    y = df["Group"]
-
-    X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
 
     # Step5: feature extraction, tf-idf
-    tfidf = TfidfVectorizer(max_features=5000)
-    X_train_tfidf = tfidf.fit_transform(X_train)
-    X_test_tfidf = tfidf.transform(X_test)
+
 
     # Step6: model training and evaluation
-    # MODEL1: logistic regression training
-    model = LogisticRegression()
-    model.fit(X_train_tfidf, y_train)
+
     # model evaluation
-    model_evaluation(X_test_tfidf, y_test)
+
 
     # take sms input and classify it as spam or not using the model
     # MODEL2:
