@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Detection Methods</title>
+    <link rel="stylesheet" href="../static/style.css">
+</head>
+<body>
+    <div class="slide">
+<h3 id="kural-belirleme">Kural Belirleme</h3>
+<p>Burada oltalama amaçlı gönderilen bir SMS&#39;te genel olarak karşılaşabileceğimiz belli başlı durumları listeleyeceğim.</p>
+<p>Bu liste zamanla genişletilebilir ve güncellenebilir. Üretken yapay zekâ faktörünü de düşünürsek, çok daha yakın vakitte güncellenmesi ve/veya üzerine eklemeler yapılması gerekebilir.</p>
+<p>Tahmin ederim ki buradaki kurallar illegal bahis sitelerinden gelecek iletileri engellemeye öngörülebilir bir süre daha yeterli olacak (:</p>
+<ol>
+<li>Bir SMS&#39;te link varsa, hele de kısaltılmış link var ise bunu doğrudan oltalama iletisi kategorisine alalım derim. <ul>
+<li>Burada gelen SMS&#39;lerde yer alan linkleri tıklanamaz hâle getirmek iyi bir önlem olur diye düşünüyorum bkz. <a href="https://trustifi.com/url-defang-tool/">url defanging</a>
+ İlla tıklamak istiyorlarsa &quot;emin misin...&quot; diye sormak suretiyle url yeniden tıklanılabilir hâle getirilir.</li>
+</ul>
+</li>
+<li>Anahtar kelime listesi yapılarak bunları doğrudan oltalama iletisi olarak sınıflandırmayı makûl buluyorum. <ul>
+<li>&quot;Kazan&quot;, &quot;Çevrimsiz&quot;, &quot;Hemen tıkla&quot;, &quot;Acil tıkla&quot;, &quot;Hemen üye ol&quot;, &quot;Boş yok&quot;, &quot;Promosyon kazan&quot; <em>bunların ingilizce karakterlerle yazılmış hâllerini de hesaba katmak gerek</em>.</li>
+</ul>
+</li>
+<li>Aciliyet ya da bir çeşit tehdit içeren iletileri de elemeli, bunun için doğal dil işleme yöntemlerinden yararlanmak daha verimli olacak. O sebepten bir üstteki kurala eklemiyorum örneklerini. </li>
+<li>Dilbilgisi yanlışlarını ekleyecek olursak ortalık karışabilir, eli yüzü düzgün ileti yazan kişi sayısı çok çok azınlıkta zira.</li>
+<li>Gönderici numarasına bakabiliriz. Türkçe SMS oltalama tespit etmeye çalıştığımızdan mütevellit, +90 ile başlayan bir numaradan ileti gelince bunu doğrudan spam olarak algılamakta bir mahzur görmüyorum 28 yıllık yaşam tecrübemden ve bunun bir dönem ödevi olmasından kaynaklanan cüretkârlık ile.</li>
+<li>Ardışıl ünlemler!!!</li>
+<li>Ardışıl BÜYÜK HARFLER</li>
+<li>Sahte linkler </li>
+<li>Typosquatting bkz. <a href="https://www.kaspersky.com/resource-center/definitions/what-is-typosquatting">yazım tuzağı</a></li>
+</ol>
+<p><strong>NOT</strong> Buradaki kuralları vakitle genişletmeye çalışacağım. Niyetim makine öğrenmesi bloğundan evvel kural tabanlı bir filtreleme yapmak. <em>Her şeyin ilacı olarak YZ ve MÖ</em> reçetesine güvenmiyorum.</p>
+
+    </div>
+    <button class="back-button" onclick="window.location.href='/presentation'">Back to Presentation</button>
+
+
+</body>
+</html>

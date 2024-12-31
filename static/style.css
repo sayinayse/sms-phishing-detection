@@ -103,6 +103,32 @@ button:active {
 .presentation-button:hover {
     background-color: #0056b3; /* Darker shade on hover */
 }
+.results-button {
+    position: fixed;
+    bottom: 20px; /* Adjust the vertical distance from the bottom */
+    right: 200px; /* Adjust the horizontal distance from the right */
+    background-color: #007BFF; /* Button color */
+    color: white; /* Text color */
+    padding: 10px 20px; /* Adjust padding for better spacing */
+    border: none; /* Remove border */
+    border-radius: 5px; /* Rounded corners */
+    text-decoration: none; /* Remove underline for the link */
+    font-size: 16px; /* Adjust font size */
+    font-weight: bold; /* Make the text bold */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Add shadow for a modern look */
+    transition: background-color 0.3s ease; /* Smooth hover transition */
+}
+
+.results-button:hover {
+    background-color: #0056b3; /* Darker shade on hover */
+}
+
+
+
+
+
+
+
 
 body {
     font-family: 'Arial', sans-serif;
@@ -202,3 +228,72 @@ button.back-button:hover {
 .slide:last-child {
     margin-bottom: 0;
 }
+
+
+
+
+
+
+
+
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f9;
+    color: #333;
+}
+
+.slide {
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 20px;
+    background: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+}
+
+.content {
+    display: flex; /* Aligns the content in a row */
+    justify-content: space-between; /* Ensures space between the list and image */
+    align-items: flex-start; /* Aligns items at the top */
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    flex: 1; /* Allows the list to take up remaining space */
+}
+
+ul li {
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+img {
+    width: 400px; /* Adjust as needed */
+    height: auto;
+    margin-left: 20px; /* Adds space between the text and the image */
+}
+
+button.back-button {
+    display: block;
+    margin: 20px auto;
+    padding: 10px 20px;
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s ease;
+}
+
+button.back-button:hover {
+    background-color: #0056b3;
+}
+
+
