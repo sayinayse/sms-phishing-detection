@@ -4,7 +4,6 @@ import ml_based
 
 app = Flask(__name__)
 
-
 def read_model_evaluation():
     """
     Reads the model evaluation details from the `model_evaluation.txt` file.
@@ -107,6 +106,31 @@ def classify_sms():
 @app.route('/presentation')
 def presentation():
     return render_template("presentation.html")
+
+8
+@app.route('/problem-definition')
+def problem_definition():
+    return render_template("problem_definition.html")
+
+@app.route('/literature_search')
+def literature_search():
+    return render_template("literature_search.html")
+
+@app.route('/detection_methods')
+def detection_methods():
+    return render_template("detection_methods.html")
+
+@app.route('/results')
+def results():
+    return render_template("results.html")
+
+@app.route('/challenges')
+def challenges():
+    return render_template("challenges.html")
+
+@app.route('/future_work')
+def future_work():
+    return render_template("future_work.html")
 
 if __name__ == '__main__':
     app.run(host="0.0.0.0", port=8080, debug=True)

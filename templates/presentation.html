@@ -8,62 +8,19 @@
 </head>
 <body>
     <div class="presentation-container">
-        <h1>SMS Phishing Detection</h1>
+        <h1>SMS Phishing Attack Detection</h1>
 
-        <section class="slide">
-            <h2>Outline</h2>
+        <div class="slide">
             <ul>
-                <li>Problem Definition</li>
-                <li>Literature Search</li>
-                <li>Detection Methods</li>
-                <ul>
-                    <li>Rule based approach</li>
-                    <li>ML based approach</li>
-                </ul>
-                <li>Results</li>
-                <li>Challenges</li>
-                <li>Future Work</li>
+                <li><a href="{{ url_for('problem_definition') }}">Problem Definition</a></li>
+                <li><a href="{{ url_for('literature_search') }}">Literature Search</a></li>
+                <li><a href="{{ url_for('detection_methods') }}">Detection Methods</a></li>
+                <li><a href="{{ url_for('results') }}">Results</a></li>
+                <li><a href="{{ url_for('challenges') }}">Challenges</a></li>
+                <li><a href="{{ url_for('future_work') }}">Future Work</a></li>
             </ul>
             <p></p>
-        </section>
-
-        <section class="slide">
-            <h2>Problem Definition</h2>
-            <p></p>
-        </section>
-
-        <section class="slide">
-            <h2>Literature Search</h2>
-        </section>
-
-        <section class="slide">
-            <h2>Detection Methods</h2>
-            <h3>Rule based approach</h3>
-
-            <h3>ML based approach</h3>
-
-            <ol>
-                <li>About data </li>
-                <p> Add the sms_disrtibution.png. Looks like we have a balanced data set.</p>
-                <p> Adjust the data set. Clean the unclear text, make all text lower case, get rid of the punctuation, unnecessary spaces.</p>
-                <p>Then get rid of the stopwords, such as: oysa, ayrıca, bazen, falan, zira etc</p>
-                <p>We draw wordcloud. add wordcloud.png</p>
-                <li>Feature extraction (TF-IDF, embeddings).</li>
-                <li>Model training and evaluation.</li>
-            </ol>
-        </section>
-
-        <section class="slide">
-            <h2>Results</h2>
-        </section>
-
-        <section class="slide">
-            <h2>Challenges</h2>
-        </section>
-
-        <section class="slide">
-            <h2>Future Work</h2>
-        </section>
+        </div>
 
         <button class="back-button" onclick="window.location.href='/'">Back to Home</button>
     </div>
