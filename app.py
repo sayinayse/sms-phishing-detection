@@ -9,7 +9,6 @@ def home_page():
     return render_template("index.html")
 
 
-
 @app.route('/', methods=['POST'])
 def classify_sms():
     # Get sms texe from the form
@@ -18,16 +17,30 @@ def classify_sms():
     if not sms_text:
         return jsonify({'error': 'SMS text is required'}), 400
 
-    print(sms_text)
+    # Initialize detection details
+    detection_details = {
+        'method': None,
+        'reason': None,
+        'ml_model': None,
+        'model_accuracy': None,
+        'confusion_matrix': None,
+        'classification_report': None,
+    }
+
     # rule based detection
     is_spam = rule_based.is_phishing_sms(sms_text)
-    print("rule: ", is_spam)
-    if is_spam == False:
+    if is_spam:
+        detection_details['method'] = 'Rule based detection'
+        detection_details['reason'] = rule_based.get_rule_violated(sms_text)
+        print(rule_based.get_rule_violated(sms_text))
+    # ml based detection
+    else:
+        detection_details['method'] = 'ML based detection'
         is_spam = ml_based.is_phishing_sms(sms_text)
-        print("ml: ", is_spam)
 
-    print("is_spam", is_spam)
-    result = {'is_spam' : is_spam}
+    print('detection details: ', detection_details)
+    result = {'is_spam' : is_spam,
+              **detection_details}
 
     # TO DO: Show an informative result evaluation.
     # Why is it evaluated as spam, because of the rule_based? Which rule?

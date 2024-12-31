@@ -24,6 +24,29 @@ def is_phishing_sms(sms_text):
         return True
     return False
 
+def get_rule_violated(sms_text):
+    """
+    Checks which rule was violated for phishing SMS detection.
+    Returns a description of the rule violated or 'No rule violated' if none.
+    """
+    if contains_suspicious_link(sms_text):
+        return "Contains a suspicious link."
+    if contains_suspicious_keywords(sms_text):
+        return "Contains suspicious keywords commonly used in phishing messages."
+    if uses_time_pressure(sms_text):
+        return "Contains urgency phrases to pressure the recipient into acting quickly."
+    if contains_fake_authority_claims(sms_text):
+        return "Contains fake claims of authority to scare the recipient."
+    if has_unusual_formatting(sms_text):
+        return "Has unusual formatting (e.g., excessive capitalization or punctuation)."
+    if comes_from_foreign_number(sms_text):
+        return "Appears to come from a foreign number, which is unusual."
+    if contains_fake_login_links(sms_text):
+        return "Contains fake login links resembling legitimate domains."
+    if contains_generic_greetings(sms_text):
+        return "Uses generic greetings, which are often used in mass phishing attempts."
+    return "No rule violated."
+
 
 # Rule 1: Suspicious Links
 def contains_suspicious_link(sms_text):

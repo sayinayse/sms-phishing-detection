@@ -3,21 +3,40 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>SMS Spam Detector</title>
+  <title>SMS Phishing Attack Detector</title>
   <link rel="stylesheet" href="../static/style.css">
 </head>
 <body>
   <div class="container">
-    <h1>SMS Spam Detector</h1>
+    <h1>SMS Phishing Attack Detector</h1>
     <form action="/" method="POST">
-       <textarea id="smsInput" name="sms" placeholder="Type your SMS here..."></textarea>
+       <textarea id="smsInput" name="sms" placeholder="Type the SMS here..."></textarea>
        <button id="submitButton">Submit</button>
     </form>
     <p id="loadingMessage" style="display: none;">Processing...</p>
     <!-- Display the result -->
-    {% if result is defined %}
+   {% if result is defined %}
       <div id="result" class="{{ 'spam' if result.is_spam else 'not-spam' }}">
-        {{ 'This SMS is classified as SPAM.' if result.is_spam else 'This SMS is NOT SPAM.' }}
+        <h2>{{ 'This SMS is classified as suspicious.' if result.is_spam else 'This SMS is NOT suspicious.' }}</h2>
+
+        {% if result.reason %}
+        <div class="details">
+          <h3>Rule-Based Detection</h3>
+          <p><strong>Reason:</strong> {{ result.reason }}</p>
+        </div>
+        {% endif %}
+
+        {% if result.ml_model %}
+        <div class="details">
+          <h3>ML-Based Detection Details:</h3>
+          <p><strong>Model Used:</strong> {{ result.ml_model }}</p>
+          <p><strong>Model Accuracy:</strong> {{ result.model_accuracy }}</p>
+          <p><strong>Confusion Matrix:</strong></p>
+          <pre>{{ result.confusion_matrix }}</pre>
+          <p><strong>Classification Report:</strong></p>
+          <pre>{{ result.classification_report }}</pre>
+        </div>
+        {% endif %}
       </div>
     {% endif %}
   </div>
