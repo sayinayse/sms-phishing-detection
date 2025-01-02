@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ML-based Detection Methods</title>
+    <link rel="stylesheet" href="../static/style.css">
+</head>
+<body>
+
+  <div class="slide">
+        <h1>ML-Based SMS Phishing Detection</h1>
+
+        <h2>How It Works</h2>
+        <ul>
+            <li><strong>Step 1:</strong> Analyze the dataset. <br> 4751 SMS with 2536 phishing, 2215 normal.</li>
+             <img src="../static/figures/sms_distribution.png" alt="SMS distribution">
+            <li><strong>Step 2:</strong> Clean text. <br> Get rid of the punctuation, multiple spaces, make all letters lower case.</li>
+
+        </ul>
+    </div>
+    <div class="slide">
+        <ul>
+            <li><strong>Step 3:</strong> Draw word cloud</li>
+            <img src="../static/figures/wordcloud.png" alt="Word cloud">
+            <li><strong>Step 4:</strong> Split data for training (80%) and test (20%)</li>
+            <li><strong>Step 5:</strong> Feature extraction, tf-idf <br> <code> TfidVectorizer </code> is used to transform SMS into numerical feature vectors. </li>
+            <li><strong>Step 6:</strong> Model training</li>
+            <li><strong>Step 7:</strong> Model evaluation</li>
+        </ul>
+    </div>
+
+
+
+
+
+    <button class="back-button" onclick="window.location.href='/presentation'">Back to Presentation</button>
+
+
+
+
+
+</body>
+</html>

@@ -116,9 +116,13 @@ def problem_definition():
 def literature_search():
     return render_template("literature_search.html")
 
-@app.route('/detection_methods')
-def detection_methods():
-    return render_template("detection_methods.html")
+@app.route('/rule_based_detection')
+def rule_based_detection():
+    return render_template("rule_based_detection.html")
+
+@app.route('/ml_based_detection')
+def ml_based_detection():
+    return render_template("ml_based_detection.html")
 
 @app.route('/results')
 def results():

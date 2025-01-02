@@ -61,7 +61,7 @@ def contains_suspicious_keywords(sms_text):
         "kazan", "çevrimsiz", "hemen tıkla", "acil tıkla",
         "hemen üye ol", "boş yok", "promosyon kazan",
         "çekiliş kazandınız", "ödül kazandınız", "son şans",
-        "araba kazandınız"
+        "araba kazandınız", "Tebrikler ödül kazandınız",
     ]
     for keyword in keywords:
         if keyword.lower() in sms_text.lower():

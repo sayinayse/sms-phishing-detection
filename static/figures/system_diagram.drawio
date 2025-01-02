@@ -1,0 +1,82 @@
+<mxfile host="app.diagrams.net" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36" version="26.0.2">
+  <diagram name="Sayfa -1" id="Ha63Aoqho9TzPhp10W1a">
+    <mxGraphModel dx="1430" dy="790" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="LZZ98WtTnIgyufGMLnJy-1" value="" style="shape=message;html=1;html=1;outlineConnect=0;labelPosition=center;verticalLabelPosition=bottom;align=center;verticalAlign=top;" vertex="1" parent="1">
+          <mxGeometry x="210" y="220" width="60" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="LZZ98WtTnIgyufGMLnJy-2" value="" style="endArrow=classic;html=1;rounded=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" edge="1" parent="1" source="LZZ98WtTnIgyufGMLnJy-1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="390" y="610" as="sourcePoint" />
+            <mxPoint x="240" y="300" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="LZZ98WtTnIgyufGMLnJy-4" value="Rule-based controls" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="180" y="300" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="LZZ98WtTnIgyufGMLnJy-5" value="Is violated?" style="rhombus;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="175" y="390" width="130" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="LZZ98WtTnIgyufGMLnJy-6" value="" style="endArrow=classic;html=1;rounded=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" edge="1" parent="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="239.66" y="360" as="sourcePoint" />
+            <mxPoint x="240" y="390" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="LZZ98WtTnIgyufGMLnJy-7" value="" style="endArrow=classic;html=1;rounded=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" edge="1" parent="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="239.66" y="470" as="sourcePoint" />
+            <mxPoint x="240" y="500" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="LZZ98WtTnIgyufGMLnJy-8" value="" style="endArrow=classic;html=1;rounded=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" edge="1" parent="1" source="LZZ98WtTnIgyufGMLnJy-5">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="310" y="430" as="sourcePoint" />
+            <mxPoint x="340" y="430" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="LZZ98WtTnIgyufGMLnJy-9" value="Yes" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="290" y="410" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="LZZ98WtTnIgyufGMLnJy-10" value="Phishing warning" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="340" y="410" width="80" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="LZZ98WtTnIgyufGMLnJy-11" value="SMS preprocessing" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="180" y="500" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="LZZ98WtTnIgyufGMLnJy-12" value="Feature extraction" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="180" y="590" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="LZZ98WtTnIgyufGMLnJy-13" value="" style="endArrow=classic;html=1;rounded=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" edge="1" parent="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="239.66" y="560" as="sourcePoint" />
+            <mxPoint x="240" y="590" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="LZZ98WtTnIgyufGMLnJy-14" value="Classification with ML methods" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="180" y="680" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="LZZ98WtTnIgyufGMLnJy-15" value="No" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="220" y="470" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="LZZ98WtTnIgyufGMLnJy-16" value="" style="endArrow=classic;html=1;rounded=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" edge="1" parent="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="239.66" y="650" as="sourcePoint" />
+            <mxPoint x="240" y="680" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="LZZ98WtTnIgyufGMLnJy-17" value="Evaluation (phishing or not)" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="200" y="770" width="80" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="LZZ98WtTnIgyufGMLnJy-19" value="" style="endArrow=classic;html=1;rounded=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" edge="1" parent="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="239.66" y="740" as="sourcePoint" />
+            <mxPoint x="240" y="770" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

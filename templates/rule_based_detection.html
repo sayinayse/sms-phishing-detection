@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Rule-based Detection Methods</title>
+    <link rel="stylesheet" href="../static/style.css">
+</head>
+<body>
+
+  <div class="slide">
+        <h1>Rule-Based SMS Phishing Detection</h1>
+
+        <h2>How It Works</h2>
+        <ul>
+            <li><strong>Step 1:</strong> Each incoming SMS is processed by the <code>is_phishing_sms</code> function.</li>
+            <li><strong>Step 2:</strong> The message is checked against the predefined rules.</li>
+            <li><strong>Step 3:</strong> If any rule is violated, the message is flagged as phishing.</li>
+            <li><strong>Step 4:</strong> The system also provides the specific rule violated for transparency.</li>
+        </ul>
+
+        <img src="../static/figures/mobile_phishing.png" alt="SMS phishing">
+    </div>
+
+   <div class="slide">
+
+        <h2>Detection Rules</h2>
+        <ul>
+    <li>
+        <strong>Suspicious Links:</strong> The system checks for URLs that could lead to phishing sites.<br>
+        <strong>Example:</strong> "Click here to win a prize!", "Kazandınız", "Promosyon kazandınız"
+    </li>
+    <li>
+        <strong>Suspicious Keywords:</strong> Certain words or phrases often used in phishing messages trigger a warning.<br>
+        <strong>Example:</strong> "Congratulations! You've won a prize!", "Tebrikler ödül kazandınız"
+    </li>
+    <li>
+        <strong>Time Pressure:</strong> Messages creating urgency (e.g., "Last chance!" or "Your account will be closed soon") are flagged.<br>
+        <strong>Example:</strong> "You must act now!", "Bugün içinde işlem yapın", "Son gün", "Hemen tıkla"
+    </li>
+    <li>
+        <strong>Fake Authority Claims:</strong> If the message pretends to be from a trusted authority (e.g., tax office or police), it's considered phishing.<br>
+        <strong>Example:</strong> "You have an unpaid tax.", "Hesabınız kapatılacak", "Adınıza açılmış bir dava var", "Polis tarafından aranıyorsunuz"
+    </li>
+    <li>
+        <strong>Unusual Formatting:</strong> Excessive capitalization, multiple exclamation marks, or ellipses are signs of phishing attempts.<br>
+        <strong>Example:</strong> "URGENT!!! YOUR ACCOUNT IS BLOCKED!!!", "Hemen tıkla!!!!", "BUGÜN SON ŞANS"
+    </li>
+    <li>
+        <strong>Foreign Numbers:</strong> SMS messages originating from foreign numbers (not from a local phone number) are flagged as suspicious.<br>
+        <strong>Example:</strong> "+44 20 7946 0958"
+    </li>
+    <li>
+        <strong>Fake Login Links:</strong> The system checks for links resembling login pages but leading to fake websites.<br>
+        <strong>Example:</strong> "log-in to your bank account at www.ziraaatbank.com."
+    </li>
+    <li>
+        <strong>Generic Greetings:</strong> Phishing messages often use vague greetings like "Dear customer" or "Valued user."<br>
+        <strong>Example:</strong> "Dear customer, your account has been compromised.", "Sayın müşteri", "Değerli müşteri"
+    </li>
+</ul>
+
+
+    </div>
+
+
+
+    <button class="back-button" onclick="window.location.href='/presentation'">Back to Presentation</button>
+
+
+
+
+
+</body>
+</html>
