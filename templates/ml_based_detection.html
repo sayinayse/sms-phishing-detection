@@ -23,7 +23,12 @@
             <li><strong>Step 3:</strong> Draw word cloud</li>
             <img src="../static/figures/wordcloud.png" alt="Word cloud">
             <li><strong>Step 4:</strong> Split data for training (80%) and test (20%)</li>
-            <li><strong>Step 5:</strong> Feature extraction, tf-idf <br> <code> TfidVectorizer </code> is used to transform SMS into numerical feature vectors. </li>
+            <li><strong>Step 5:</strong> Feature extraction (tf-idf) <br> tf <code> (# of times word w appears in document d / # of words in document d) </code>  <br>idf <code> log(total documents / # of documents containing(word))</code> <br> <code> TfidVectorizer </code> is used to transform SMS into numerical feature vectors. <br>
+                doc1 = "a a b c" <br>
+                doc2 = "a c c c d e f" <br>
+                doc3 = "a c d d d" <br>
+                doc4 = "a d f"
+            </li>
             <li><strong>Step 6:</strong> Model training</li>
             <li><strong>Step 7:</strong> Model evaluation</li>
         </ul>
